@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="725.0" style="-fx-background-color: #0b1e2d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+   <children>
+      <AnchorPane layoutX="393.0" layoutY="28.0" prefHeight="344.0" prefWidth="297.0" style="-fx-background-color: #275f91;">
+         <children>
+            <JFXButton layoutX="22.0" layoutY="237.0" onAction="#login" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #4d96d6;" text="Sign In" textFill="#cdcdcd">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="106.0" layoutY="44.0" text="Sign In" textFill="#d0d0d0">
+               <font>
+                  <Font name="Agency FB" size="33.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="username" focusColor="#48fa4b" layoutX="22.0" layoutY="107.0" maxWidth="245.0" minWidth="220.0" prefHeight="31.0" prefWidth="245.0" promptText="Username" unFocusColor="#b2adce" />
+            <JFXPasswordField fx:id="password" focusColor="#57fc48" layoutX="22.0" layoutY="157.0" maxWidth="245.0" minWidth="245.0" prefHeight="31.0" prefWidth="245.0" promptText="Password" unFocusColor="#b2adce" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="30.0" layoutY="208.0" text="The biggest application that will help you manage your  stock" textFill="#797979">
+         <font>
+            <Font name="Agency FB" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="146.0" prefHeight="43.0" prefWidth="277.0" text="Welcome to Stock Online" textFill="#d0bfbf">
+         <font>
+            <Font name="Agency FB" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="232.0" text="with only couple of touches..." textFill="#797979">
+         <font>
+            <Font name="Agency FB" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
