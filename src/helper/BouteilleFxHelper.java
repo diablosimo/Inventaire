@@ -14,7 +14,7 @@ public class BouteilleFxHelper extends AbstractFxHelper<Bouteille> {
         titres = new AbstractFxHelperItem[]{  
             new AbstractFxHelperItem("Nom", "produit.nom"),
             new AbstractFxHelperItem("Formule chimique", "produit.id"),
-            new AbstractFxHelperItem("Emplacement", "emplacement.nomEmplacement"),
+            new AbstractFxHelperItem("Emplacement", "emplacement.emplacement"),
             new AbstractFxHelperItem("Code", "code"),
             new AbstractFxHelperItem("Date d'entreé", "dateEntree")
 
