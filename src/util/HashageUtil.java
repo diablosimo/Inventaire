@@ -9,7 +9,7 @@ import java.security.MessageDigest;
 
 /**
  *
- * @author
+ *  @author cneree
  */
 public class HashageUtil {
 

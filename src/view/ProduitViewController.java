@@ -30,6 +30,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.ButtonType;
 import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
+import util.DateUtil;
 
 /**
  * FXML Controller class
@@ -68,7 +69,8 @@ public class ProduitViewController implements Initializable {
     TableView tableView = new TableView();
 
     private BouteilleFxHelper bouteilleFxHelper;
-
+    
+    DateUtil dateUtil = new DateUtil();
     ProduitChimiqueService produitService = new ProduitChimiqueService();
     BouteilleService bouteilleService = new BouteilleService();
     EmplacementService emplacementService = new EmplacementService();
@@ -111,7 +113,7 @@ public class ProduitViewController implements Initializable {
 
     public Bouteille getParam() {
       ProduitChimique p = new ProduitChimique(id.getText(), libelle.getText(), typeP.getText());
-      Bouteille b=new Bouteille(1L, codeP.getText(), new Double(qteInit.getText()),new Date());
+      Bouteille b=new Bouteille(Long.MIN_VALUE, codeP.getText(), new Double(qteInit.getText()),new Date());
       b.setProduitChimique(p);
        b.setEmplacement(emplacementsBox.getValue());
         return b;
@@ -184,7 +186,7 @@ public class ProduitViewController implements Initializable {
         }
         Date datePr = null;
         if(dateEntree.getText()!= null && !dateEntree.getText().equals("")){
-            datePr = new Date(dateEntree.getText());
+            datePr = dateUtil.parse(dateEntree.getText());
         }
        
         bouteilleFxHelper.setList(bouteilleService.findByCriteria(idP, nomP, codeProduit, emp, datePr));

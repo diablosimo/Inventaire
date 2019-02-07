@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
- * @author AIMAD
+ *  @author cneree
  * @param <T>
  */
 public abstract class AbstractFxHelper<T> {

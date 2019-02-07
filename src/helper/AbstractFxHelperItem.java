@@ -7,7 +7,7 @@ package helper;
 
 /**
  *
- * @author AIMAD
+ *  @author cneree
  */
 public class AbstractFxHelperItem {
 

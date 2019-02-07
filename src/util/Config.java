@@ -8,7 +8,7 @@ package util;
 
 /**
  *
- * @author moulaYounes
+ *  @author cneree
  */
 public class Config {
     private static String cheminJasper="C:\\Users\\CHAÂCHAÏ\\Documents\\NetBeansProjects\\Stock2\\src\\report\\Clientreport.jasper";

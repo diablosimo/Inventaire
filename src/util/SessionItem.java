@@ -6,7 +6,7 @@ package util;
 
 /**
  *
- * @author moulaYounes
+ *  @author cneree
  */
 public class SessionItem {
     private String key;

@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Younes
+ *  @author cneree
  */
 public class AbstractFacade<T> {
 

@@ -26,7 +26,7 @@ public class BouteilleService extends AbstractFacade<Bouteille>{
         String query = " SELECT b FROM Bouteille b WHERE 1 = 1 ";
         query += SearchUtil.addConstraint("b", "produitChimique.nom", "=", nomProduit);
           query += SearchUtil.addConstraint("b", "produitChimique.id", "=", idProduit);
-        query += SearchUtil.addConstraint("b", "emplacement.nomEmplacement", "=", emplacement);
+        query += SearchUtil.addConstraint("b", "emplacement.emplacement", "=", emplacement);
     query += SearchUtil.addConstraint("b", "code", "=", code);
     query += SearchUtil.addConstraintDate("b", "dateEntree","=", dateEntrée);
         return getEntityManager().createQuery(query).getResultList();

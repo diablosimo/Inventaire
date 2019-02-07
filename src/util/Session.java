@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author moulaYounes
+ *  @author cneree
  */
 public class Session {
 
