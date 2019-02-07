@@ -5,11 +5,13 @@
  */
 package service;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -37,14 +39,41 @@ public class EmplacementServiceTest {
     }
 
     /**
-     * Test of initDb method, of class EmplacementService.
+     * Test of initDB method, of class EmplacementService.
      */
     @Test
-    public void testInitDb() {
-        System.out.println("initDb");
+    public void testInitDB() {
+        System.out.println("initDB");
         EmplacementService instance = new EmplacementService();
-        instance.initDb();
+        instance.initDB();
         // TODO review the generated test code and remove the default call to fail.
     }
-    
+
+    /**
+     * Test of findEmName method, of class EmplacementService.
+     */
+   // @Test
+//    public void testFindEmName() {
+//        System.out.println("findEmName");
+//        EmplacementService instance = new EmplacementService();
+//        List<String> expResult = null;
+//        List<String> result = instance.findEmName();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+    /**
+     * Test of creerEmplacement method, of class EmplacementService.
+     */
+//    @Test
+//    public void testCreerEmplacement() {
+//        System.out.println("creerEmplacement");
+//        Long id = null;
+//        String nomEmplacement = "";
+//        EmplacementService instance = new EmplacementService();
+//        instance.creerEmplacement(id, nomEmplacement);
+//        // TODO review the generated test code and remove the default call to fail.
+//    }
+//    
 }

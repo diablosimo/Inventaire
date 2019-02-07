@@ -23,7 +23,7 @@ public class Emplacement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nomEmplacement;
+    private String emplacement;
     @OneToOne(mappedBy = "emplacement")
     private Bouteille bouteille;
 
@@ -35,17 +35,17 @@ public class Emplacement implements Serializable {
         this.id = id;
     }
 
-    public String getNomEmplacement() {
-        return nomEmplacement;
+    public String getEmplacement() {
+        return emplacement;
     }
 
-    public void setNomEmplacement(String nomEmplacement) {
-        this.nomEmplacement = nomEmplacement;
+    public void setEmplacement(String emplacement) {
+        this.emplacement = emplacement;
     }
 
-    public Emplacement(Long id, String nomEmplacement) {
+    public Emplacement(Long id, String emplacement) {
         this.id = id;
-        this.nomEmplacement = nomEmplacement;
+        this.emplacement = emplacement;
     }
 
     public Emplacement(Long id) {
@@ -85,7 +85,7 @@ public class Emplacement implements Serializable {
 
     @Override
     public String toString() {
-        return "Emplacement{" + "id=" + id + ", nomEmplacement=" + nomEmplacement + '}';
+        return emplacement ;
     }
 
     

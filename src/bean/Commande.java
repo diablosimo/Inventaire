@@ -101,7 +101,7 @@ public class Commande implements Serializable {
 
     @Override
     public String toString() {
-        return "Commande{" + "id=" + id + ", dateCommande=" + dateCommande + ", user=" + user + '}';
+        return "Commande{" + "id=" + id + ", dateCommande=" + dateCommande +  '}';
     }
 
    

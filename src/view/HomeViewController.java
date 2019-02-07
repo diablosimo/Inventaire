@@ -89,7 +89,12 @@ public class HomeViewController implements Initializable {
         // TODO
       String email = ((User) Session.getAttribut("connectedUser")).getEmail();
         String name = us.findUsername(email);
-        welcome.setText("Welcome back Mr. " + name);
+       
+        String genre =us.findGenre(email);
+        if(genre.equals("femme")){
+            welcome.setText("Bienvenue Mme. " + name); 
+        }else{
+        welcome.setText("Bienvenue Mr. " + name);}
     }
 
     public Label getWelcome() {

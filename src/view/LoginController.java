@@ -20,7 +20,7 @@ import util.Session;
 /**
  * FXML Controller class
  *
- * @author CHAACHAI Youssef <youssef.chaachai@gmail.com>
+ * @author cneree
  */
 public class LoginController implements Initializable {
 

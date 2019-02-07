@@ -55,5 +55,9 @@ public Integer findUser(String email){
             return (Integer) getEntityManager().createQuery(query).getSingleResult();
 
 }
-    
+
+    public String findGenre(String email) {
+        String query = "SELECT u.genre FROM User u WHERE u.email='" + email + "'";
+        return (String) getEntityManager().createQuery(query).getSingleResult();
+    }
 }
