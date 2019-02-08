@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  */
 public class UserServiceTest {
     
-    public UserServiceTest() {
+public UserServiceTest() {
     }
     
     @BeforeClass
