@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="779.0" style="-fx-background-color: #0b1e2d;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProduitViewController">
    <children>
-      <AnchorPane layoutX="550.0" layoutY="123.0" prefHeight="308.0" prefWidth="195.0" style="-fx-background-color: #275f91;">
+      <AnchorPane layoutX="550.0" layoutY="123.0" prefHeight="308.0" prefWidth="195.0" style="-fx-background-color: #005598;">
          <children>
             <JFXButton layoutX="16.0" layoutY="258.0" onAction="#findByCriteria" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #4d96d6;" text="Chercher" textFill="WHITE" />
             <Label layoutX="20.0" layoutY="16.0" text="Chercher un Produit:" textFill="#b9b9b9">
@@ -46,7 +46,7 @@
             <JFXButton layoutX="14.0" layoutY="280.0" onAction="#deleteProduct" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: #4d96d6;" text="Supprimer" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <Label layoutX="260.0" layoutY="14.0" text="manager de produit..." textFill="#c9c9c9">
+      <Label layoutX="260.0" layoutY="14.0" text="Manager du Produit" textFill="#c9c9c9">
          <font>
             <Font name="Agency FB" size="45.0" />
          </font>

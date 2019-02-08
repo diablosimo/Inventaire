@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="725.0" style="-fx-background-color: #0b1e2d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddUserViewController">
+   <children>
+      <AnchorPane layoutX="393.0" layoutY="28.0" prefHeight="344.0" prefWidth="297.0" style="-fx-background-color: #005598;">
+         <children>
+            <JFXButton layoutX="22.0" layoutY="292.0" onAction="#addUser" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: #4d96d6;" text="Ajouter" textFill="#cdcdcd">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="20.0" layoutY="14.0" text="Ajouter un Utilisateur" textFill="#d0d0d0">
+               <font>
+                  <Font name="Agency FB" size="33.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="lastName" focusColor="#48ecfc" layoutX="22.0" layoutY="71.0" maxWidth="245.0" minWidth="220.0" prefHeight="31.0" prefWidth="245.0" promptText="Nom" unFocusColor="#b2adce" />
+            <JFXTextField fx:id="firstName" focusColor="#48ecfc" layoutX="22.0" layoutY="109.0" maxWidth="245.0" minWidth="220.0" prefHeight="31.0" prefWidth="245.0" promptText="Prenom" unFocusColor="#b2adce" />
+            <JFXTextField fx:id="email" focusColor="#48ecfc" layoutX="22.0" layoutY="147.0" maxWidth="245.0" minWidth="220.0" prefHeight="31.0" prefWidth="245.0" promptText="Email" unFocusColor="#b2adce" />
+            <JFXPasswordField fx:id="password" focusColor="#48ecfc" layoutX="22.0" layoutY="185.0" maxWidth="245.0" minWidth="245.0" prefHeight="31.0" prefWidth="245.0" promptText="Mot de Passe" unFocusColor="#d7d7d7" />
+              <JFXRadioButton id="radio1"  maxWidth="245.0" textFill="#d0bfbf" minWidth="245.0" layoutX="22.0" layoutY="223.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="245.0" text="Femme" >
+                 
+                   <toggleGroup>
+                  <ToggleGroup fx:id="radiosexe" /> 
+                </toggleGroup>
+               </JFXRadioButton>
+                  <JFXRadioButton id="radio2" maxWidth="245.0" minWidth="245.0" textFill="#d0bfbf" layoutX="22.0" layoutY="253.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="245.0" text="Homme" toggleGroup="$radiosexe "></JFXRadioButton>
+                  
+         </children>
+      </AnchorPane>
+      <Label layoutX="30.0" layoutY="208.0" text="L'application qui vous aidera à gérer votre stock" textFill="#797979">
+         <font>
+            <Font name="Agency FB" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="146.0" prefHeight="43.0" prefWidth="300.0" text="Bienvenue Au Stock Online" textFill="#d0bfbf">
+         <font>
+            <Font name="Agency FB" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="232.0" text="avec seulement quelques touches..." textFill="#797979">
+         <font>
+            <Font name="Agency FB" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="77.0" layoutY="328.0" onAction="#retour" prefHeight="29.0" prefWidth="184.0" style="-fx-background-color: #4d96d6;" text="Home" textFill="#cdcdcd">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>

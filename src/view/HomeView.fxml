@@ -18,14 +18,11 @@
                   <Font name="Agency FB" size="33.0" />
                </font>
             </Label>
-            <JFXButton layoutX="53.0" layoutY="62.0" onAction="#magasin" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Stores Manager" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="94.0" onAction="#stock" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Stock Manager" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="126.0" onAction="#produit" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Manager des Produits" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="158.0" onAction="#client" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Clients Manager" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="190.0" onAction="#commande" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Orders Manager" textFill="#cdcdcd" />
-            <JFXButton layoutX="53.0" layoutY="287.0" onAction="#addUser" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Add a user" textFill="#cdcdcd" />
-            <JFXButton layoutX="53.0" layoutY="222.0" onAction="#livraison" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Deliveries Manager" textFill="#cdcdcd" />
-            <JFXButton layoutX="53.0" layoutY="254.0" onAction="#facture" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Bills Manager" textFill="#cdcdcd" />
+            <JFXButton layoutX="53.0" layoutY="287.0" onAction="#addUser" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Ajouter un Utilisateur" textFill="#cdcdcd" />
          </children>
       </AnchorPane>
       <Label layoutX="40.0" layoutY="242.0" text="Veuillez choisir l'un des champs du menu pour commencer.." textFill="#797979">

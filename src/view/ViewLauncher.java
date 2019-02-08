@@ -26,7 +26,7 @@ public class ViewLauncher extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("ProduitCharView.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("ProduitView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AddUserView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

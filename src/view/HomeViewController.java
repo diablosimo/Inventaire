@@ -36,10 +36,7 @@ public class HomeViewController implements Initializable {
 
     UserService us = new UserService();
 
-    @FXML
-    public void magasin(javafx.event.ActionEvent actionEvent) throws IOException {
-        ViewLauncher.forward(actionEvent, "MagasinView.fxml", this.getClass());
-    }
+    
 
     @FXML
     public void stock(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -61,10 +58,7 @@ public class HomeViewController implements Initializable {
         ViewLauncher.forward(actionEvent, "CommandeView.fxml", this.getClass());
     }
 
-    @FXML
-    public void livraison(javafx.event.ActionEvent actionEvent) throws IOException {
-        ViewLauncher.forward(actionEvent, "LivraisonView.fxml", this.getClass());
-    }
+    
 
     @FXML
     public void produit(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -76,11 +70,7 @@ public class HomeViewController implements Initializable {
         ViewLauncher.forward(actionEvent, "ClientView.fxml", this.getClass());
     }
 
-    @FXML
-    public void facture(javafx.event.ActionEvent actionEvent) throws IOException {
-        ViewLauncher.forward(actionEvent, "FactureView.fxml", this.getClass());
-    }
-
+   
     /**
      * Initializes the controller class.
      */
