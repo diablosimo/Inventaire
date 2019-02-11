@@ -81,7 +81,7 @@ public class HomeViewController implements Initializable {
         String name = us.findUsername(email);
        
         String genre =us.findGenre(email);
-        if(genre.equals("femme")){
+        if(genre.equals("Femme")){
             welcome.setText("Bienvenue Mme. " + name); 
         }else{
         welcome.setText("Bienvenue Mr. " + name);}

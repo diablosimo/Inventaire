@@ -9,8 +9,10 @@ import bean.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
@@ -19,7 +21,7 @@ import service.UserService;
 /**
  * FXML Controller class
  *
- * @author CHAACHAI Youssef <youssef.chaachai@gmail.com>
+ * @author cneree
  */
 public class AddUserViewController implements Initializable {
 
@@ -38,15 +40,14 @@ public class AddUserViewController implements Initializable {
     private RadioButton radio2;
 
     UserService userService = new UserService();
+    
 
     public User getParam() {
-        System.out.println(radio1.isSelected()+" haaaaaaaa lwl ");
-        System.out.println(radio2.isSelected()+" haaaaaaaa tanii ");
         if (radio1.isSelected()) {
-            return new User(lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio1.getText());
+            return new User(Integer.SIZE, lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio1.getText(), Boolean.FALSE);
         }else{
             if (radio2.isSelected()) {
-                return new User(lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio2.getText());
+                return new User(Integer.SIZE,lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio2.getText(),Boolean.FALSE);
             }
             else return new User(lastName.getText(), firstName.getText(), email.getText(), password.getText()," " );
         }
