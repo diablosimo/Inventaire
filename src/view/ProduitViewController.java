@@ -151,7 +151,7 @@ public class ProduitViewController implements Initializable {
 
     public void updateProduct(ActionEvent event) {
     Bouteille b = (Bouteille) tableView.getSelectionModel().getSelectedItem();
-        b.setId(Long.MIN_VALUE);
+
         b.setCode(codeP.getText());
         b.setQteInitial(new Double(qteInit.getText()));
         Emplacement e = emplacementsBox.getValue();
@@ -160,6 +160,7 @@ public class ProduitViewController implements Initializable {
         p.setId(id.getText());
         p.setNom(libelle.getText());
         p.setTypeProduit(typeP.getText());
+        produitService.edit(p);
         b.setProduitChimique(p);
         bouteilleService.edit(b);
         tableView.refresh();
@@ -213,6 +214,7 @@ public class ProduitViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
        emplacementsBox.setItems(FXCollections.observableArrayList(emplacementService.findAll()));
+      
         initHelper();
     }
 

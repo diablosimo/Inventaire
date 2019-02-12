@@ -64,5 +64,12 @@ public class BouteilleService extends AbstractFacade<Bouteille>{
                     ligneCommandeService.remove(ligneCommande);
                 }
             }
+        }if (!stocks.isEmpty()) {
+            for (Stock stock : stocks) {
+                if (stock.getProduitChimique().equals(bouteille.getProduitChimique())) {
+                    stockService.remove(stock);
+                }
+            }
         }
+        remove(bouteille);
 }}
