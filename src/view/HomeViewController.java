@@ -62,12 +62,12 @@ public class HomeViewController implements Initializable {
 
     @FXML
     public void produit(javafx.event.ActionEvent actionEvent) throws IOException {
-        ViewLauncher.forward(actionEvent, "ProduitView.fxml", this.getClass());
+        ViewLauncher.forward(actionEvent, "test.fxml", this.getClass());
     }
 
     @FXML
     public void client(javafx.event.ActionEvent actionEvent) throws IOException {
-        ViewLauncher.forward(actionEvent, "ClientView.fxml", this.getClass());
+        ViewLauncher.forward(actionEvent, "Bouteille.fxml", this.getClass());
     }
 
    

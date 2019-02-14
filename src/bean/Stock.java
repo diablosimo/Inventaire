@@ -37,6 +37,11 @@ public class Stock implements Serializable {
         this.id = id;
     }
 
+    public Stock(Long id, Double QteExistantProduit) {
+        this.id = id;
+        this.QteExistantProduit = QteExistantProduit;
+    }
+
     public Double getQteExistantProduit() {
         return QteExistantProduit;
     }

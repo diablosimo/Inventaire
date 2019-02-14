@@ -24,8 +24,9 @@ public class Emplacement implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String emplacement;
+    
     @OneToOne(mappedBy = "emplacement")
-    private Bouteille bouteille;
+    private ProduitChimique produitChimique;
 
     public Long getId() {
         return id;
@@ -55,14 +56,15 @@ public class Emplacement implements Serializable {
     public Emplacement() {
     }
 
-    public Bouteille getBouteille() {
-        return bouteille;
+    public ProduitChimique getProduitChimique() {
+        return produitChimique;
     }
 
-    public void setBouteille(Bouteille bouteille) {
-        this.bouteille = bouteille;
+    public void setProduitChimique(ProduitChimique produitChimique) {
+        this.produitChimique = produitChimique;
     }
- 
+
+   
     @Override
     public int hashCode() {
         int hash = 0;

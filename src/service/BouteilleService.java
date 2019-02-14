@@ -22,32 +22,24 @@ public class BouteilleService extends AbstractFacade<Bouteille>{
      public BouteilleService() {
         super(Bouteille.class);
     }
-     public List<Bouteille> findByCriteria(String idProduit, String nomProduit,  String code, String emplacement,Date dateEntrée) {
+     public List<Bouteille> findByCriteria( String nomProduit,  String code, Date dateEntrée) {
         String query = " SELECT b FROM Bouteille b WHERE 1 = 1 ";
         query += SearchUtil.addConstraint("b", "produitChimique.nom", "=", nomProduit);
-          query += SearchUtil.addConstraint("b", "produitChimique.id", "=", idProduit);
-        query += SearchUtil.addConstraint("b", "emplacement.emplacement", "=", emplacement);
     query += SearchUtil.addConstraint("b", "code", "=", code);
     query += SearchUtil.addConstraintDate("b", "dateEntree","=", dateEntrée);
         return getEntityManager().createQuery(query).getResultList();
     }
-     public int ajouterBouteille(Long id, String code, double qte, Date dateE,String idP,String nomP,String typeP,Long emplacementId) {
-        ProduitChimique p = new ProduitChimique();
+     public int ajouterBouteille( String code, double qte, Date dateE,String idP) {
+      
         Bouteille b = new Bouteille();
         ProduitChimiqueService ps= new ProduitChimiqueService();
-        EmplacementService emplacementService = new EmplacementService();
-        Emplacement e = emplacementService.find(emplacementId);
-        if (e != null) {
-            p.setId(idP);
-            p.setNom(nomP);
-            p.setTypeProduit(typeP);
-            ps.create(p);
-            b.setId(id);
+       
+        ProduitChimique p = ps.find(idP);
+        if (p != null) {
+            b.setProduitChimique(p);
             b.setCode(code);
             b.setDateEntree(dateE);
-            b.setEmplacement(e);
             b.setQteInitial(qte);
-            b.setProduitChimique(p);
             create(b);
             return 1;
         }

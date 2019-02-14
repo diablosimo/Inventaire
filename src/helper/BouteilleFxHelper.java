@@ -14,9 +14,9 @@ public class BouteilleFxHelper extends AbstractFxHelper<Bouteille> {
     static {
 
         titres = new AbstractFxHelperItem[]{  
-            new AbstractFxHelperItem("Nom", "produitChimique.nom"),
-            new AbstractFxHelperItem("Formule chimique", "produitChimique.id"),
-            new AbstractFxHelperItem("Emplacement", "emplacement.emplacement"),
+       
+            new AbstractFxHelperItem("Formule chimique", "produitChimique"),
+           
             new AbstractFxHelperItem("Code", "code"),
             new AbstractFxHelperItem("Date d'entreé", "dateEntree")
 
@@ -31,27 +31,6 @@ public class BouteilleFxHelper extends AbstractFxHelper<Bouteille> {
         super(titres, table);
     }
     
-    @Override
-public Object getValueAt(int rowIndex,int columnIndex){
-    if(list!=null && rowIndex < list.size()) {
-         if (columnIndex == 0) {
-                return list.get(rowIndex).getProduitChimique().getNom();
-            }
-         if (columnIndex == 1) {
-                return list.get(rowIndex).getProduitChimique().getId();
-            }
-         if (columnIndex == 2) {
-                return list.get(rowIndex).getEmplacement().getEmplacement();
-            }
-         if (columnIndex == 4) {
-            String dateS= dateU.formateDate("dd-MM-yyyy",list.get(rowIndex).getDateEntree());
-                return dateS;
-            }
-          else {
-                return super.getValueAt(rowIndex, columnIndex).toString();
-            }
-        }
-        return "";
-    }
+    
 }
 

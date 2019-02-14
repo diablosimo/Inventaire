@@ -37,33 +37,27 @@ import util.DateUtil;
  *
  * @author Cneree
  */
-public class ProduitViewController implements Initializable {
+public class BouteilleController implements Initializable {
 
-    //ajouter produit
-    @FXML
-    private TextField id;
-    @FXML
-    private TextField libelle;
-    @FXML
-    private ComboBox<Emplacement> emplacementsBox;
+    //ajouter Bouteille
+  
    @FXML
     private TextField codeP;
-   @FXML 
-   private TextField typeP;
    @FXML
    private TextField qteInit;
+    @FXML
+    private ComboBox<ProduitChimique> produitsBox;
+   
    
    //chercher produit
-   @FXML
-   private TextField formule;
+   
     @FXML
     private TextField nomProduit;
    @FXML
    private TextField code;
    @FXML
    private TextField dateEntree;
-   @FXML
-   private TextField emplacement;
+   
 
     @FXML
     TableView tableView = new TableView();
@@ -79,17 +73,16 @@ public class ProduitViewController implements Initializable {
         bouteilleFxHelper = new BouteilleFxHelper(tableView, bouteilleService.findAll());
     }
     public void clear() {
-        id.clear();
-        libelle.clear();
-        emplacementsBox.setValue(null);
+    
+        produitsBox.setValue(null);
         codeP.clear();
-        typeP.clear();
+      
         qteInit.clear();
-        formule.clear();
+      
         nomProduit.clear();
         code.clear();
         dateEntree.clear();
-        emplacement.clear();
+        
     }
 
     public void alert(String contenttext, String headertext) {
@@ -102,37 +95,32 @@ public class ProduitViewController implements Initializable {
 
     public void Showselected() {
         Bouteille b = (Bouteille) tableView.getSelectionModel().getSelectedItem();
-        id.setText(b.getProduitChimique().getId());
-        libelle.setText(b.getProduitChimique().getNom());
-        emplacementsBox.setValue(b.getEmplacement());
+        produitsBox.setValue(b.getProduitChimique());
         codeP.setText(b.getCode());
-        typeP.setText(b.getProduitChimique().getTypeProduit());
         qteInit.setText(b.getQteInitial()+"");
         
     }
 
     public Bouteille getParam() {
-      ProduitChimique p = new ProduitChimique(id.getText(), libelle.getText(), typeP.getText());
-      Bouteille b=new Bouteille(Long.MIN_VALUE, codeP.getText(), new Double(qteInit.getText()),new Date());
-      b.setProduitChimique(p);
-       b.setEmplacement(emplacementsBox.getValue());
+      Bouteille b=new Bouteille( codeP.getText(), new Double(qteInit.getText()),new Date());
+       b.setProduitChimique(produitsBox.getValue());
         return b;
 
    }
 
-    public void addProduct(ActionEvent event) {
-       if (emplacementsBox.getValue() == null || id.getText().equals("") || libelle.getText().equals("") || codeP.getText().equals("")|| typeP.getText().equals("")||qteInit.getText().equals("")) {
+    public void addBouteille(ActionEvent event) {
+       if (produitsBox.getValue() == null || codeP.getText().equals("")|| qteInit.getText().equals("")) {
            JOptionPane.showMessageDialog(null, "Please fill up all the fields !", "ERROR", JOptionPane.ERROR_MESSAGE);
       } else {
            Bouteille b = getParam();
-            bouteilleService.ajouterBouteille(b.getId(), b.getCode(),b.getQteInitial(), b.getDateEntree(), b.getProduitChimique().getId(), b.getProduitChimique().getNom(),b.getProduitChimique().getTypeProduit(), b.getEmplacement().getId());
+            bouteilleService.ajouterBouteille( b.getCode(),b.getQteInitial(), b.getDateEntree(), b.getProduitChimique().getId());
             bouteilleFxHelper.create(b);
             clear();
             alert("Product has been successfully added", "DONE!");
         }
    }
 
-   public void deleteProduct(ActionEvent event) {
+   public void deleteBouteille(ActionEvent event) {
         Bouteille b = (Bouteille) tableView.getSelectionModel().getSelectedItem();
         Alert aa = new Alert(Alert.AlertType.CONFIRMATION);
         aa.setHeaderText("WARNING!!");
@@ -149,18 +137,12 @@ public class ProduitViewController implements Initializable {
       }
     }
 
-    public void updateProduct(ActionEvent event) {
+    public void updateBouteille(ActionEvent event) {
     Bouteille b = (Bouteille) tableView.getSelectionModel().getSelectedItem();
 
         b.setCode(codeP.getText());
         b.setQteInitial(new Double(qteInit.getText()));
-        Emplacement e = emplacementsBox.getValue();
-        b.setEmplacement(e);
-        ProduitChimique p = new ProduitChimique();
-        p.setId(id.getText());
-        p.setNom(libelle.getText());
-        p.setTypeProduit(typeP.getText());
-        produitService.edit(p);
+        ProduitChimique p = produitsBox.getValue();
         b.setProduitChimique(p);
         bouteilleService.edit(b);
         tableView.refresh();
@@ -169,14 +151,7 @@ public class ProduitViewController implements Initializable {
     }
 
     public void findByCriteria() {
-        String idP = null;
-        if (formule.getText() != null && !formule.getText().equals("")) {
-            idP = formule.getText();
-        }
-        String emp = null;
-        if (emplacement.getText() != null && !emplacement.getText().equals("")) {
-            emp = emplacement.getText();
-        }
+      
         String nomP = null;
         if (nomProduit.getText() != null && !nomProduit.getText().equals("")) {
             nomP = nomProduit.getText();
@@ -190,7 +165,7 @@ public class ProduitViewController implements Initializable {
             datePr = dateUtil.parse(dateEntree.getText());
         }
        
-        bouteilleFxHelper.setList(bouteilleService.findByCriteria(idP, nomP, codeProduit, emp, datePr));
+        bouteilleFxHelper.setList(bouteilleService.findByCriteria( nomP, codeProduit, datePr));
         clear();
     }
 
@@ -213,26 +188,12 @@ public class ProduitViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-       emplacementsBox.setItems(FXCollections.observableArrayList(emplacementService.findAll()));
+       produitsBox.setItems(FXCollections.observableArrayList(produitService.findAll()));
       
         initHelper();
     }
 
-    public TextField getId() {
-        return id;
-    }
-
-    public void setId(TextField id) {
-        this.id = id;
-    }
-
-    public TextField getLibelle() {
-        return libelle;
-    }
-
-    public void setLibelle(TextField libelle) {
-        this.libelle = libelle;
-    }
+   
 
     public TextField getCodeP() {
         return codeP;
@@ -242,13 +203,7 @@ public class ProduitViewController implements Initializable {
         this.codeP = codeP;
     }
 
-    public TextField getTypeP() {
-        return typeP;
-    }
-
-    public void setTypeP(TextField typeP) {
-        this.typeP = typeP;
-    }
+   
 
     public TextField getQteInit() {
         return qteInit;
@@ -258,13 +213,7 @@ public class ProduitViewController implements Initializable {
         this.qteInit = qteInit;
     }
 
-    public TextField getFormule() {
-        return formule;
-    }
-
-    public void setFormule(TextField formule) {
-        this.formule = formule;
-    }
+   
 
     public TextField getCode() {
         return code;
@@ -291,13 +240,31 @@ public class ProduitViewController implements Initializable {
         this.nomProduit = nomProduit;
     }
 
-    public ComboBox<Emplacement> getEmplacementBox() {
-        return emplacementsBox;
+    public ComboBox<ProduitChimique> getProduitsBox() {
+        return produitsBox;
     }
 
-    public void setEmplacementBox(ComboBox<Emplacement> emplacementBox) {
-        this.emplacementsBox = emplacementBox;
+    public void setProduitsBox(ComboBox<ProduitChimique> produitsBox) {
+        this.produitsBox = produitsBox;
     }
+
+    public TableView getTableView() {
+        return tableView;
+    }
+
+    public void setTableView(TableView tableView) {
+        this.tableView = tableView;
+    }
+
+    public BouteilleFxHelper getBouteilleFxHelper() {
+        return bouteilleFxHelper;
+    }
+
+    public void setBouteilleFxHelper(BouteilleFxHelper bouteilleFxHelper) {
+        this.bouteilleFxHelper = bouteilleFxHelper;
+    }
+
+   
 
     
 

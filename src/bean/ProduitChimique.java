@@ -27,6 +27,8 @@ public class ProduitChimique implements Serializable {
     private String id;
     private String nom;
     private String typeProduit;
+    @OneToOne
+    private Emplacement emplacement;
     @OneToOne(mappedBy = "produitChimique")
     private Stock stock;
     @OneToMany(mappedBy = "produitChimique")
@@ -88,6 +90,14 @@ public class ProduitChimique implements Serializable {
         this.ligneCommandes = ligneCommandes;
     }
 
+    public Emplacement getEmplacement() {
+        return emplacement;
+    }
+
+    public void setEmplacement(Emplacement emplacement) {
+        this.emplacement = emplacement;
+    }
+
    
 
     public ProduitChimique(String id, String nom) {
@@ -137,7 +147,7 @@ public class ProduitChimique implements Serializable {
 
     @Override
     public String toString() {
-        return "ProduitChimique{" + "id=" + id + ", nom=" + nom +  ", typeProduit=" + typeProduit + '}';
+        return nom;
     }
 
     
