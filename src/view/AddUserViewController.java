@@ -44,10 +44,10 @@ public class AddUserViewController implements Initializable {
 
     public User getParam() {
         if (radio1.isSelected()) {
-            return new User(Integer.SIZE, lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio1.getText(), Boolean.FALSE);
+            return new User(Integer.MAX_VALUE, lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio1.getText(), Boolean.FALSE);
         }else{
             if (radio2.isSelected()) {
-                return new User(Integer.SIZE,lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio2.getText(),Boolean.FALSE);
+                return new User(Integer.MAX_VALUE,lastName.getText(), firstName.getText(), email.getText(), password.getText(), radio2.getText(),Boolean.FALSE);
             }
             else return new User(lastName.getText(), firstName.getText(), email.getText(), password.getText()," " );
         }

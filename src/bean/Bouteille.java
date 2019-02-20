@@ -31,7 +31,7 @@ public class Bouteille implements Serializable {
      private String code;
     @ManyToOne
     private ProduitChimique produitChimique;
-    private Double QteInitial;
+    private Double qteInitial;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateEntree;
     
@@ -47,9 +47,9 @@ public class Bouteille implements Serializable {
 
    
 
-    public Bouteille( String code, Double QteInitial, Date dateEntree) {
+    public Bouteille( String code, Double qteInitial, Date dateEntree) {
         this.code = code;
-        this.QteInitial = QteInitial;
+        this.qteInitial = qteInitial;
         this.dateEntree = dateEntree;
     }
 
@@ -83,11 +83,11 @@ public class Bouteille implements Serializable {
     }
 
     public Double getQteInitial() {
-        return QteInitial;
+        return qteInitial;
     }
 
-    public void setQteInitial(Double QteInitial) {
-        this.QteInitial = QteInitial;
+    public void setQteInitial(Double qteInitial) {
+        this.qteInitial = qteInitial;
     }
 
     public Date getDateEntree() {
@@ -125,7 +125,7 @@ public class Bouteille implements Serializable {
 
     @Override
     public String toString() {
-        return "Bouteille{" + "code=" + code + ", QteInitial=" + QteInitial + ", dateEntree=" + dateEntree + '}';
+        return "Bouteille{" + "code=" + code + ", qteInitial=" + qteInitial + ", dateEntree=" + dateEntree + '}';
     }
 
     

@@ -6,12 +6,9 @@
 package view;
 
 
-import bean.Bouteille;
 import bean.Emplacement;
 import bean.ProduitChimique;
-import helper.BouteilleFxHelper;
 import helper.ProduitFxHelper;
-import java.util.Date;
 import service.BouteilleService;
 import service.EmplacementService;
 import service.ProduitChimiqueService;
@@ -38,7 +35,7 @@ import util.DateUtil;
  *
  * @author Cneree
  */
-public class TestController implements Initializable {
+public class ProduitController implements Initializable {
 
     //ajouter produit
     @FXML

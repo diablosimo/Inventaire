@@ -20,7 +20,7 @@
             </Label>
             <JFXButton layoutX="53.0" layoutY="94.0" onAction="#stock" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Stock Manager" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="126.0" onAction="#produit" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Manager des Produits" textFill="#cdcdcd" />
-            <JFXButton layoutX="53.0" layoutY="158.0" onAction="#client" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Clients Manager" textFill="#cdcdcd" />
+            <JFXButton layoutX="53.0" layoutY="158.0" onAction="#bouteille" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Manager des Bouteilles" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="190.0" onAction="#commande" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Orders Manager" textFill="#cdcdcd" />
             <JFXButton layoutX="53.0" layoutY="287.0" onAction="#addUser" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4d96d6;" text="Ajouter un Utilisateur" textFill="#cdcdcd" />
          </children>

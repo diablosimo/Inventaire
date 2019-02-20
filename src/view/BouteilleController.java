@@ -7,12 +7,10 @@ package view;
 
 
 import bean.Bouteille;
-import bean.Emplacement;
 import bean.ProduitChimique;
 import helper.BouteilleFxHelper;
 import java.util.Date;
 import service.BouteilleService;
-import service.EmplacementService;
 import service.ProduitChimiqueService;
 import java.io.IOException;
 //import java.awt.event.ActionEvent;
@@ -67,7 +65,6 @@ public class BouteilleController implements Initializable {
     DateUtil dateUtil = new DateUtil();
     ProduitChimiqueService produitService = new ProduitChimiqueService();
     BouteilleService bouteilleService = new BouteilleService();
-    EmplacementService emplacementService = new EmplacementService();
 
     public void initHelper() {
         bouteilleFxHelper = new BouteilleFxHelper(tableView, bouteilleService.findAll());

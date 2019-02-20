@@ -9,7 +9,6 @@
     <class>bean.Commande</class>
     <class>bean.Emplacement</class>
     <class>bean.User</class>
-    <class>bean.Walo</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Inventaire?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
